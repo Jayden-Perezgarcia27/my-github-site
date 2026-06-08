@@ -22,7 +22,8 @@ body {
   margin: 0 auto;
   padding: 20px;
   background: #f5f5f5;
-  timeline-scope: --toggle-timeline;
+  
+  --dark-mode: 0;
 }
 
 h1 { color: #1F4E79; }
@@ -40,30 +41,11 @@ body::before {
   border-radius: 4px;
   cursor: pointer;
   font-size: 14px;
-  anchor-name: --toggle-btn;
-}
-
-@keyframes toggle-state {
-  from { --dark-mode: 0; }
-  to { --dark-mode: 1; }
-}
-
-html {
-  scroll-timeline: --toggle-timeline y;
-}
-
-body {
-  animation: toggle-state linear;
-  animation-timeline: --toggle-timeline;
-  animation-range: entry 0% exit 100%;
+  view-transition-name: toggle-button;
 }
 
 html:has(body:active) {
-  --dark-mode: 1;
-}
-
-body {
-  transition: background 0.3s, color 0.3s;
+  --dark-mode: calc(1 - var(--dark-mode));
 }
 
 @container style(--dark-mode: 1) {
@@ -80,6 +62,7 @@ body {
     color: #111;
   }
 }
+
 
 
     </style>
