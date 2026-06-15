@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,10 +12,10 @@
             max-width: 800px;
             margin: 0 auto;
             padding: 20px;
-            background: #ffffff;
+            background: #2d2d2d;
         }
         h1 {
-            color: #ee7207;
+            color: #2E75B6;
         }
         h2 {
             color: #2E75B6;
@@ -21,11 +23,12 @@
         }
         p {
             line-height: 1.6;
+            color: #ee7207;
         }
         #countdown {
             font-weight: bold;
             color: #ee7207;
-            background: #ffffff;
+            background: #3d3d3d;
             padding: 10px;
             border-radius: 5px;
             display: inline-block;
@@ -37,14 +40,14 @@
     <h1>Hi, I'm Jayden P</h1>
     <h2>About Me</h2>
     <p>I'm a freshman taking a Computer Science class at Energy Tech High School.</p>
-    <p>Time left until September 27 (my birthday): <span id="countdown">Loading timer...</span></p>
+    <p>Time left until September 27: <span id="countdown">Loading timer...</span></p>
     
     <h2>My Interests</h2>
     <p>I enjoy drawing things, gaming, and reading (mainly manga).</p>
     <h2>My Goals for This Course</h2>
     <p>My main goal for this class is to build a website to demonstrate my understanding of coding and to also use to show off my other projects.</p>
     <h2>My GitHub</h2>
-    <p>Check out my projects: <a href="https://github.com/Jayden-Perezgarcia27">Jayden-Perezgarcia27</a> </p>
+    <p>Check out my projects: <a href="https://github.com">Jayden-Perezgarcia27</a> </p>
 
     <script>
         function updateCountdown() {
@@ -59,10 +62,11 @@
             const difference = targetDate - now;
 
             const days = Math.floor(difference / (1000 * 60 * 60 * 24));
-            const minutes = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60));
+            const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-            document.getElementById('countdown').innerHTML = `${days} days, ${minutes} minutes, ${seconds} seconds`;
+            document.getElementById('countdown').innerHTML = `${days} days, ${hours} hours, ${minutes} minutes, ${seconds} seconds`;
         }
 
         setInterval(updateCountdown, 1000);
@@ -70,3 +74,5 @@
     </script>
 </body>
 </html>
+
+
